@@ -9,7 +9,7 @@ Steps:
 1. In the Cayenne Dashboard add a new Generic PWM Output.
 2. Select a virtual pin number.
 2. Select a slider widget.
-3. Set min value to 0 and max value of 1.
+3. Set the slider widget min value to 0 and max value of 255.
 4. Set PWM_VIRTUAL_PIN to the virtual pin number you selected.
 3. Attach an output device to a digital PWM pin (3, 5, 6, 9, 10, and 11 on most Arduino boards).
 6. Set PWM_DIGITAL_PIN to the digital PWM pin number you selected.
@@ -39,8 +39,8 @@ void setup()
 CAYENNE_IN(PWM_VIRTUAL_PIN)
 {
 	// get value sent from dashboard
-	int currentValue = getValue.asInt(); // 0 to 1023
-	analogWrite(PWM_DIGITAL_PIN, currentValue / 4); // must be from 0 to 255
+	int currentValue = getValue.asInt(); // 0 to 255
+	analogWrite(PWM_DIGITAL_PIN, currentValue); // analogWrite accepts a value from 0 to 255
 }
 
 void loop()
