@@ -9,7 +9,7 @@ The Cayenne Library is required to run this sketch. If you have not already done
 Steps:
 1. In the Cayenne Dashboard add a new Custom Widget, and select Slider.
 2. Select a virtual pin number.
-3. Set min value to 0 and max value of 1.
+3. Set the slider widget min value to 0 and max value of 255.
 4. Set LED_VIRTUAL_PIN to the pin number you selected.
 5. Connect the LED's legs to GND, and to a PWM pin (3, 5, 6, 9, 10, and 11 on most Arduino boards).
    Use a 1k resistor if possible.
@@ -42,8 +42,8 @@ void setup()
 CAYENNE_IN(LED_VIRTUAL_PIN)
 {
   // get value sent from dashboard
-  int currentValue = getValue.asInt(); // 0 to 1023
-  analogWrite(LED_DIGITAL_PIN, currentValue / 4); // must be from 0 to 255
+  int currentValue = getValue.asInt(); // 0 to 255
+  analogWrite(LED_DIGITAL_PIN, currentValue); // analogWrite accepts a value from 0 to 255
 }
 
 void loop()
