@@ -32,7 +32,7 @@ Steps:
 #include <CayenneEthernet.h>
 
 // Virtual Pin of the DS18B20 widget.
-#define VIRTUAL_PIN V1
+#define VIRTUAL_PIN V5
 
 // Digital pin the DS18B20 is connected to. Do not use digital pins 0 or 1 since those conflict with the use of Serial.
 const int tmpPin = 2;
